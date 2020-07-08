@@ -1,0 +1,29 @@
+.add-book-form {
+  background-color: rgb(255, 255, 255);
+  border-radius: 12px;
+  input:first-child {
+    margin-top: 42px;
+  }
+
+  input {
+    padding: 9px 19px !important;
+    font-size: 14px;
+    color: #1a1f20;
+    &:hover {
+      border: 2px solid rgb(202, 201, 201);
+    }
+  }
+  .add-book-btn {
+    width: auto;
+    margin: 19px;
+    background: #7edbb0;
+    text-transform: lowercase;
+    &:hover {
+      background: rgb(142, 200, 170);
+    }
+  }
+}
+.hidden {
+  visibility: hidden;
+  //opacity: 0;
+}

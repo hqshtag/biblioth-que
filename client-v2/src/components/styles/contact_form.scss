@@ -1,0 +1,52 @@
+.add-contact-form {
+  background: #59a4d6be;
+  align-self: center;
+  justify-self: center;
+  //max-width: 400px;
+  border-radius: 6px;
+  padding: 20px;
+  margin: 100px 42px;
+  input {
+    margin: 9px;
+    height: 42px;
+    width: 60%;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 3px 9px;
+
+    &:focus {
+      outline: none;
+      border: 2px solid rgb(156, 154, 154);
+    }
+  }
+  .radio-div {
+    display: flex;
+    justify-content: space-around;
+    label {
+      //background-color: red;
+      display: flex;
+      align-items: center;
+      font-size: 16px;
+      //margin-bottom: 1120px;
+      margin: 0px 19px;
+
+      input[type="radio"] {
+        //padding: 0;
+        height: 27px;
+        width: 27px;
+      }
+    }
+  }
+  .add-contact-btn {
+    background: #4c96c7;
+    border-radius: 6px;
+    border: none;
+    //text-transform: lowercase;
+    font-size: 12px;
+    padding: 9px 19px !important;
+    margin: 36px 9px 0px;
+    &:hover {
+      background: lighten(rgb(65, 164, 189), 9);
+    }
+  }
+}

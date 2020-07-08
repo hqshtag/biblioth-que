@@ -1,0 +1,45 @@
+/* * {
+ 
+}
+ */
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@600&family=Merienda+One&Roboto:ital,wght@1,300&family=Cairo:wght@200&display=swap");
+
+@import "views";
+
+//@import "cards";
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.dashboard-welcome-text {
+  margin: 36px 70px;
+  color: rgb(192, 217, 255);
+  font-family: "Montserrat", sans-serif;
+}
+
+.tab-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 1px 1px;
+  grid-template-areas: "left-half right-half";
+  .left-half {
+    grid-area: left-half;
+  }
+
+  .right-half {
+    grid-area: right-half;
+  }
+}
+
+.form {
+  font-family: "Montserrat", sans-serif;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

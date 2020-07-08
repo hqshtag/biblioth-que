@@ -1,0 +1,46 @@
+nav {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background: #4c96c7;
+  height: 69px;
+  box-shadow: 0 4px 7px -2px rgba(0, 0, 0, 0.2);
+  .title {
+    font-size: 30px;
+    font-family: "Merienda One", cursive;
+    transition: all 360ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    color: rgb(232, 239, 241);
+
+    transition: all 420ms ease-in;
+    &:hover {
+      color: rgb(225, 241, 240);
+    }
+  }
+  .navbutton {
+    font-family: "Cairo", sans-serif;
+    font-size: 12px;
+    margin: 0 27px;
+    width: 141px;
+    height: 36px;
+    border: none;
+    background-color: rgba(65, 164, 189, 0.363);
+    transition: all 360ms ease-in-out;
+
+    border-radius: 7px;
+
+    &:hover {
+      background-color: lighten(rgb(63, 190, 212), 7);
+      font-size: 10px;
+    }
+  }
+
+  .logoutButton {
+    margin-right: -60px;
+    border-radius: 9px;
+    border: none;
+    background-color: rgb(29, 27, 31);
+    &:hover {
+      background-color: lighten(rgb(29, 28, 30), 5);
+    }
+  }
+}
