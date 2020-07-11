@@ -2,10 +2,15 @@
 @import "./fonts";
 @import "./mixins";
 @import "./buttons";
+@import "./basics";
+@import "./navbar";
+@import "./tabs";
 @import "./authStyle";
 
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+
+  font-family: "Roboto";
 }

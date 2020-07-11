@@ -1,0 +1,63 @@
+.add-contact-form {
+  background: #59a4d6be;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  border-radius: 6px;
+  padding: 20px;
+  margin: 100px 42px;
+}
+
+.add-contact-form input {
+  margin: 9px;
+  height: 42px;
+  width: 60%;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 3px 9px;
+}
+
+.add-contact-form input:focus {
+  outline: none;
+  border: 2px solid #9c9a9a;
+}
+
+.add-contact-form .radio-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.add-contact-form .radio-div label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 16px;
+  margin: 0px 19px;
+}
+
+.add-contact-form .radio-div label input[type="radio"] {
+  height: 27px;
+  width: 27px;
+}
+
+.add-contact-form .add-contact-btn {
+  background: #4c96c7;
+  border-radius: 6px;
+  border: none;
+  font-size: 12px;
+  padding: 9px 19px !important;
+  margin: 36px 9px 0px;
+}
+
+.add-contact-form .add-contact-btn:hover {
+  background: #63b5c9;
+}
+/*# sourceMappingURL=contact_form.css.map */

@@ -3,7 +3,7 @@ import { Provider } from "react-redux";
 import store from "./Store";
 import AppRouter from "./AppRouter";
 
-import "./components/styles/styles.scss";
+import "./assets/styles/stylecheet.css";
 
 function App() {
   // console.log(store.getState());

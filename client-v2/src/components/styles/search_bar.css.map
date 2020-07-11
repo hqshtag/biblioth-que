@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,WAAW,CAAC;EACV,YAAY,EAAE,MAAM;CACrB",
+    "sources": [
+        "search_bar.scss"
+    ],
+    "names": [],
+    "file": "search_bar.css"
+}

@@ -1,200 +1,4 @@
-@font-face {
-  font-family: "Merienda One";
-  src: url("../fonts/MeriendaOne-Regular.ttf");
-}
-
-@font-face {
-  font-family: "Roboto";
-  src: url("../fonts//Roboto-Regular.ttf");
-}
-
-@font-face {
-  font-family: "Roboto Medium";
-  src: url("../fonts/Roboto-Medium.ttf");
-}
-
-@font-face {
-  font-family: "Roboto Light";
-  src: url("../fonts/Roboto-Light.ttf");
-}
-
-@font-face {
-  font-family: "Roboto Italic";
-  src: url("../fonts/Roboto-Italic.ttf");
-}
-
-@font-face {
-  font-family: "Roboto Bold";
-  src: url("../fonts/Roboto-Bold.ttf");
-}
-
-@font-face {
-  font-family: "Montserrat";
-  src: url("../fonts/Montserrat-Regular.ttf");
-}
-
-.logout-btn {
-  width: 150px;
-  height: 60px;
-  border-radius: 9px;
-  border: none;
-  font-size: 24px;
-  color: white;
-  -webkit-transition: all 180ms ease-in;
-  transition: all 180ms ease-in;
-  cursor: pointer;
-  background-color: #515151;
-}
-
-.logout-btn:hover {
-  background-color: black;
-}
-
-.logout-btn:active {
-  -webkit-transform: scale(0.95);
-          transform: scale(0.95);
-}
-
-.logout-btn:focus {
-  outline: none;
-}
-
-.submit-btn {
-  width: 100px;
-  height: 60px;
-  border-radius: 9px;
-  border: none;
-  font-size: 24px;
-  color: white;
-  -webkit-transition: all 180ms ease-in;
-  transition: all 180ms ease-in;
-  cursor: pointer;
-  background-color: #62e7a7;
-}
-
-.submit-btn:hover {
-  background-color: #62e780;
-}
-
-.submit-btn:active {
-  -webkit-transform: scale(0.95);
-          transform: scale(0.95);
-}
-
-.submit-btn:focus {
-  outline: none;
-}
-
-.reset-btn {
-  width: 80px;
-  height: 60px;
-  border-radius: 9px;
-  border: none;
-  font-size: 24px;
-  color: white;
-  -webkit-transition: all 180ms ease-in;
-  transition: all 180ms ease-in;
-  cursor: pointer;
-  background-color: #e76a62;
-}
-
-.reset-btn:hover {
-  background-color: #ff4444;
-}
-
-.reset-btn:active {
-  -webkit-transform: scale(0.95);
-          transform: scale(0.95);
-}
-
-.reset-btn:focus {
-  outline: none;
-}
-
-h1 {
-  font-size: 42px;
-}
-
-h2 {
-  font-size: 30px;
-}
-
-h3 {
-  font-size: 24px;
-}
-
-h4 {
-  font-size: 19px;
-}
-
-p {
-  font-size: 9px;
-}
-
-nav {
-  width: 100%;
-  height: 100px;
-  background-color: #2487c8;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-nav .title {
-  font-family: "Merienda One";
-  color: white;
-  letter-spacing: 1px;
-}
-
-.tabs-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-item-align: end;
-      align-self: flex-end;
-  -webkit-transition: all 90ms ease-out;
-  transition: all 90ms ease-out;
-}
-
-.tabs-container .tab-button {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  border-radius: 16px 16px 0px 0px;
-  margin: 0px 12px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 220px;
-  height: 60px;
-  background-color: #cecece;
-  color: #807f7f;
-}
-
-.tabs-container .tab-button.active {
-  background-color: white;
-  color: black;
-}
-
-.tabs-container .tab-button h3 {
-  cursor: pointer;
-  padding: 15px;
-  margin-right: 20px;
-}
-
-.tabs-container .tab-button svg:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
-}
-
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,800");
 .wrapper {
   font-family: "Montserrat", sans-serif;
   background-color: #f6f5f7;
@@ -213,14 +17,9 @@ nav .title {
           align-items: center;
   height: 100vh;
   margin: 10px 0 50px;
-  /* Animation */
-  /* Move the signin to the right */
-  /*Move overlay to the left*/
-  /* Bring sign up over sign in*/
-  /* Move overlay back to the right*/
 }
 
-.wrapper .container {
+.container {
   background: white;
   border-radius: 10px;
   -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
@@ -232,12 +31,12 @@ nav .title {
   min-height: 480px;
 }
 
-.wrapper .container h1 {
+.container h1 {
   font-weight: bold;
   margin: 0;
 }
 
-.wrapper .container p {
+.container p {
   font-size: 14px;
   font-weight: 100;
   line-height: 20px;
@@ -245,18 +44,18 @@ nav .title {
   margin: 20px 0 30px;
 }
 
-.wrapper .container span {
+.container span {
   font-size: 12px;
 }
 
-.wrapper .container a {
+.container a {
   color: #333;
   font-size: 14px;
   text-decoration: none;
   margin: 50px 0;
 }
 
-.wrapper .form-container form {
+.form-container form {
   background: white;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -276,7 +75,7 @@ nav .title {
   text-align: center;
 }
 
-.wrapper .form-container input {
+.form-container input {
   background: #eee;
   border: none;
   padding: 12px 15px;
@@ -285,11 +84,11 @@ nav .title {
   border-radius: 5px;
 }
 
-.wrapper .form-container input:focus {
+.form-container input:focus {
   outline: none;
 }
 
-.wrapper button {
+button {
   border-radius: 20px;
   border: 1px solid #d3e6ec;
   background: #267bb4;
@@ -306,25 +105,25 @@ nav .title {
   cursor: pointer;
 }
 
-.wrapper button:active {
+button:active {
   -webkit-transform: scale(0.95);
           transform: scale(0.95);
 }
 
-.wrapper button:focus {
+button:focus {
   outline: none;
 }
 
-.wrapper button.ghost {
+button.ghost {
   background: transparent;
   border-color: white;
 }
 
-.wrapper button:hover {
+button:hover {
   background: #2c8fd1;
 }
 
-.wrapper .form-container {
+.form-container {
   position: absolute;
   top: 0;
   height: 100%;
@@ -332,20 +131,20 @@ nav .title {
   transition: all 0.6s ease-in-out;
 }
 
-.wrapper .sign-in-container {
+.sign-in-container {
   left: 0;
   width: 50%;
   z-index: 2;
 }
 
-.wrapper .sign-up-container {
+.sign-up-container {
   left: 0;
   width: 50%;
   z-index: 1;
   opacity: 0;
 }
 
-.wrapper .overlay-container {
+.overlay-container {
   position: absolute;
   top: 0;
   left: 50%;
@@ -359,8 +158,8 @@ nav .title {
   z-index: 50;
 }
 
-.wrapper .overlay {
-  background: #a650df88;
+.overlay {
+  background: rgba(166, 80, 223, 0.534);
   background: -webkit-gradient(linear, left top, right top, from(#4c96c7), to(#047bca)) no-repeat 0 0/cover;
   background: linear-gradient(to right, #4c96c7, #047bca) no-repeat 0 0/cover;
   color: white;
@@ -376,7 +175,7 @@ nav .title {
   transition: transform 0.6s ease-in-out, -webkit-transform 0.6s ease-in-out;
 }
 
-.wrapper .overlay-panel {
+.overlay-panel {
   position: absolute;
   top: 0;
   display: -webkit-box;
@@ -404,54 +203,51 @@ nav .title {
   transition: transform 0.6s ease-in-out, -webkit-transform 0.6s ease-in-out;
 }
 
-.wrapper .overlay-right {
+.overlay-right {
   right: 0;
   -webkit-transform: translateX(0);
           transform: translateX(0);
 }
 
-.wrapper .overlay-left {
+.overlay-left {
   -webkit-transform: translateX(-20%);
           transform: translateX(-20%);
 }
 
-.wrapper .container.right-panel-active .sign-in-container {
+/* Animation */
+/* Move the signin to the right */
+.container.right-panel-active .sign-in-container {
   -webkit-transform: translateX(100%);
           transform: translateX(100%);
 }
 
-.wrapper .container.right-panel-active .overlay-container {
+/*Move overlay to the left*/
+.container.right-panel-active .overlay-container {
   -webkit-transform: translateX(-100%);
           transform: translateX(-100%);
 }
 
-.wrapper .container.right-panel-active .sign-up-container {
+/* Bring sign up over sign in*/
+.container.right-panel-active .sign-up-container {
   -webkit-transform: translateX(100%);
           transform: translateX(100%);
   opacity: 1;
   z-index: 5;
 }
 
-.wrapper .container.right-panel-active .overlay {
+/* Move overlay back to the right*/
+.container.right-panel-active .overlay {
   -webkit-transform: translateX(50%);
           transform: translateX(50%);
 }
 
-.wrapper .container.right-panel-active .overlay-left {
+.container.right-panel-active .overlay-left {
   -webkit-transform: translateX(0);
           transform: translateX(0);
 }
 
-.wrapper .container.right-panel-active .overlay-right {
+.container.right-panel-active .overlay-right {
   -webkit-transform: translateX(20%);
           transform: translateX(20%);
 }
-
-* {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-  font-family: "Roboto";
-}
-/*# sourceMappingURL=stylecheet.css.map */
+/*# sourceMappingURL=loginsignup.css.map */

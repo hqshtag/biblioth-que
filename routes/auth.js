@@ -14,7 +14,7 @@ const checkToken = require("../middleware/verify");
 
 router.get("/", auth, async (req, res) => {
   try {
-    const user = await User.findById(req.user.id).select("-password");
+    const user = await User.findById(res.locals.user.id).select("-password");
     res.json(user);
   } catch (error) {
     console.log(error.message);

@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 
-import "../styles/loginsignup.scss";
-
 export default ({ login, signup }) => {
   const [layout, setLayout] = useState(false);
   const [loginData, setLoginData] = useState({ email: "", password: "" });

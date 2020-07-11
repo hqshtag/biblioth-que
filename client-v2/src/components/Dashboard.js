@@ -5,7 +5,7 @@ import authActions from "../actions/authActions";
 import apiActions from "../actions/bookActions";
 
 import Modal from "./layout/Modal";
-import Navbar from "./layout/Navbar";
+import Navbar from "./layout/NewNavbar";
 import AddBookForm from "./containers/partials/AddBookForm";
 import Library from "./containers/Library";
 import MyContact from "./containers/MyContacts";
@@ -23,9 +23,8 @@ const Dashboard = ({ dispatch }) => {
   };
 
   const [layoutView, setLayoutView] = useState({
-    home: true,
+    library: true,
     contacts: false,
-    books: false,
   });
 
   useEffect(() => {
@@ -33,10 +32,12 @@ const Dashboard = ({ dispatch }) => {
     //dispatch()
   }, []);
 
-  const handleMenuNavigation = (e) => {
-    //console.log(tasks);
+  const tabNavigationHandler = (e) => {
+    // console.log(e);
     let key = e.target.getAttribute("data-key");
-    setLayoutView({ home: false, contacts: false, [key]: true });
+    console.log(key);
+    setLayoutView({ library: false, contacts: false, [key]: true });
+    //console.log(layoutView);
   };
 
   const handleAddBook = (data) => {
@@ -53,12 +54,13 @@ const Dashboard = ({ dispatch }) => {
       <Navbar
         logout={handleLogout}
         toggleModalOn={toggleModalOn}
-        layoutHandler={handleMenuNavigation}
+        layoutHandler={tabNavigationHandler}
+        currentLayout={layoutView}
       />
       <Modal handleClose={toggleModalOff} show={showModal}>
         <AddBookForm submitHandler={handleAddBook} />
       </Modal>
-      {layoutView.home ? <Library /> : <MyContact />}
+      {layoutView.library ? <Library /> : <MyContact />}
     </Fragment>
   );
 };

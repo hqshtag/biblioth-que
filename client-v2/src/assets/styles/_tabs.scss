@@ -1,0 +1,36 @@
+.tabs-container {
+  display: flex;
+  align-self: flex-end;
+
+  transition: all 90ms ease-out;
+
+  .tab-button {
+    align-items: center;
+    justify-content: space-evenly;
+
+    border-radius: 16px 16px 0px 0px;
+
+    margin: 0px 12px;
+    display: flex;
+
+    width: 220px;
+    height: 60px;
+
+    background-color: $unactiveTabBG;
+    color: $unactiveTabText;
+    &.active {
+      background-color: $activeTabBG;
+      color: $activeTabText;
+    }
+
+    h3 {
+      cursor: pointer;
+      //background-color: red;
+      padding: 15px;
+      margin-right: 20px;
+    }
+    svg:hover {
+      transform: scale(1.1);
+    }
+  }
+}

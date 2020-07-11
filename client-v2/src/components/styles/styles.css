@@ -1,0 +1,80 @@
+/* * {
+ 
+}
+ */
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@600&family=Merienda+One&Roboto:ital,wght@1,300&family=Cairo:wght@200&display=swap");
+.list-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 42px;
+  font-family: "Roboto", sans-serif;
+}
+
+.list-container h1 {
+  font-size: 16px;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.dashboard-welcome-text {
+  margin: 36px 70px;
+  color: #c0d9ff;
+  font-family: "Montserrat", sans-serif;
+}
+
+.tab-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
+  gap: 1px 1px;
+      grid-template-areas: "left-half right-half";
+}
+
+.tab-container .left-half {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: left-half;
+}
+
+.tab-container .right-half {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: right-half;
+}
+
+.form {
+  font-family: "Montserrat", sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+/*# sourceMappingURL=styles.css.map */
