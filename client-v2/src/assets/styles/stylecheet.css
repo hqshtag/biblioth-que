@@ -1,0 +1,372 @@
+@font-face {
+  font-family: "Merienda One";
+  src: url("../fonts/MeriendaOne-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts//Roboto-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Roboto Medium";
+  src: url("../fonts/Roboto-Medium.ttf");
+}
+
+@font-face {
+  font-family: "Roboto Light";
+  src: url("../fonts/Roboto-Light.ttf");
+}
+
+@font-face {
+  font-family: "Roboto Italic";
+  src: url("../fonts/Roboto-Italic.ttf");
+}
+
+@font-face {
+  font-family: "Roboto Bold";
+  src: url("../fonts/Roboto-Bold.ttf");
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Regular.ttf");
+}
+
+.logout-btn {
+  width: 100px;
+  height: 60px;
+  border-radius: 9px;
+  border: none;
+  font-size: 24px;
+  color: white;
+  -webkit-transition: all 360ms ease-in;
+  transition: all 360ms ease-in;
+  cursor: pointer;
+  background-color: #515151;
+}
+
+.logout-btn:hover {
+  background-color: black;
+}
+
+.logout-btn:active {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+}
+
+.logout-btn:focus {
+  outline: none;
+}
+
+.submit-btn {
+  width: 100px;
+  height: 60px;
+  border-radius: 9px;
+  border: none;
+  font-size: 24px;
+  color: white;
+  -webkit-transition: all 360ms ease-in;
+  transition: all 360ms ease-in;
+  cursor: pointer;
+  background-color: #62e7a7;
+}
+
+.submit-btn:hover {
+  background-color: #62e780;
+}
+
+.submit-btn:active {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+}
+
+.submit-btn:focus {
+  outline: none;
+}
+
+.reset-btn {
+  width: 80px;
+  height: 60px;
+  border-radius: 9px;
+  border: none;
+  font-size: 24px;
+  color: white;
+  -webkit-transition: all 360ms ease-in;
+  transition: all 360ms ease-in;
+  cursor: pointer;
+  background-color: #e76a62;
+}
+
+.reset-btn:hover {
+  background-color: #ff4444;
+}
+
+.reset-btn:active {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+}
+
+.reset-btn:focus {
+  outline: none;
+}
+
+.wrapper {
+  font-family: "Montserrat", sans-serif;
+  background-color: #f6f5f7;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+  margin: 10px 0 50px;
+  /* Animation */
+  /* Move the signin to the right */
+  /*Move overlay to the left*/
+  /* Bring sign up over sign in*/
+  /* Move overlay back to the right*/
+}
+
+.wrapper .container {
+  background: white;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+          box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  position: relative;
+  overflow: hidden;
+  width: 768px;
+  max-width: 100%;
+  min-height: 480px;
+}
+
+.wrapper .container h1 {
+  font-weight: bold;
+  margin: 0;
+}
+
+.wrapper .container p {
+  font-size: 14px;
+  font-weight: 100;
+  line-height: 20px;
+  letter-spacing: 0.5px;
+  margin: 20px 0 30px;
+}
+
+.wrapper .container span {
+  font-size: 12px;
+}
+
+.wrapper .container a {
+  color: #333;
+  font-size: 14px;
+  text-decoration: none;
+  margin: 50px 0;
+}
+
+.wrapper .form-container form {
+  background: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 0 50px;
+  height: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.wrapper .form-container input {
+  background: #eee;
+  border: none;
+  padding: 12px 15px;
+  margin: 8px 0;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.wrapper .form-container input:focus {
+  outline: none;
+}
+
+.wrapper button {
+  border-radius: 20px;
+  border: 1px solid #d3e6ec;
+  background: #267bb4;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 12px 15px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  -webkit-transition: -webkit-transform 80ms ease-in;
+  transition: -webkit-transform 80ms ease-in;
+  transition: transform 80ms ease-in;
+  transition: transform 80ms ease-in, -webkit-transform 80ms ease-in;
+  cursor: pointer;
+}
+
+.wrapper button:active {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+}
+
+.wrapper button:focus {
+  outline: none;
+}
+
+.wrapper button.ghost {
+  background: transparent;
+  border-color: white;
+}
+
+.wrapper button:hover {
+  background: #2c8fd1;
+}
+
+.wrapper .form-container {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  -webkit-transition: all 0.6s ease-in-out;
+  transition: all 0.6s ease-in-out;
+}
+
+.wrapper .sign-in-container {
+  left: 0;
+  width: 50%;
+  z-index: 2;
+}
+
+.wrapper .sign-up-container {
+  left: 0;
+  width: 50%;
+  z-index: 1;
+  opacity: 0;
+}
+
+.wrapper .overlay-container {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  -webkit-transition: -webkit-transform 0.6s ease-in-out;
+  transition: -webkit-transform 0.6s ease-in-out;
+  transition: transform 0.6s ease-in-out;
+  transition: transform 0.6s ease-in-out, -webkit-transform 0.6s ease-in-out;
+  z-index: 50;
+}
+
+.wrapper .overlay {
+  background: #a650df88;
+  background: -webkit-gradient(linear, left top, right top, from(#4c96c7), to(#047bca)) no-repeat 0 0/cover;
+  background: linear-gradient(to right, #4c96c7, #047bca) no-repeat 0 0/cover;
+  color: white;
+  position: relative;
+  left: -100%;
+  height: 100%;
+  width: 200%;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  -webkit-transition: -webkit-transform 0.6s ease-in-out;
+  transition: -webkit-transform 0.6s ease-in-out;
+  transition: transform 0.6s ease-in-out;
+  transition: transform 0.6s ease-in-out, -webkit-transform 0.6s ease-in-out;
+}
+
+.wrapper .overlay-panel {
+  position: absolute;
+  top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 40px;
+  height: 100%;
+  width: 50%;
+  text-align: center;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  -webkit-transition: -webkit-transform 0.6s ease-in-out;
+  transition: -webkit-transform 0.6s ease-in-out;
+  transition: transform 0.6s ease-in-out;
+  transition: transform 0.6s ease-in-out, -webkit-transform 0.6s ease-in-out;
+}
+
+.wrapper .overlay-right {
+  right: 0;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+.wrapper .overlay-left {
+  -webkit-transform: translateX(-20%);
+          transform: translateX(-20%);
+}
+
+.wrapper .container.right-panel-active .sign-in-container {
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+}
+
+.wrapper .container.right-panel-active .overlay-container {
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+
+.wrapper .container.right-panel-active .sign-up-container {
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  opacity: 1;
+  z-index: 5;
+}
+
+.wrapper .container.right-panel-active .overlay {
+  -webkit-transform: translateX(50%);
+          transform: translateX(50%);
+}
+
+.wrapper .container.right-panel-active .overlay-left {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+.wrapper .container.right-panel-active .overlay-right {
+  -webkit-transform: translateX(20%);
+          transform: translateX(20%);
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+/*# sourceMappingURL=stylecheet.css.map */

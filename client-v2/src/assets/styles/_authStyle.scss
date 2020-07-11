@@ -87,10 +87,10 @@ $overlay-gradiant2: #047bca;
     cursor: pointer;
   }
 
-  &:active {
+  button:active {
     transform: scale(0.95);
   }
-  &:focus {
+  button:focus {
     outline: none;
   }
 
