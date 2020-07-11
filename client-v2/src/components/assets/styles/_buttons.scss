@@ -1,0 +1,11 @@
+.logout-btn {
+  @include button(60px, 100px, "logout");
+}
+
+.submit-btn {
+  @include button(60px, 100px, "submit");
+}
+
+.reset-btn {
+  @include button(60px, 80px, "reset");
+}

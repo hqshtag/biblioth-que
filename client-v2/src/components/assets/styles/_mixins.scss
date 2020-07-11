@@ -1,0 +1,59 @@
+@mixin button($height, $width, $type) {
+  width: $width;
+  height: $height;
+  border-radius: 9px;
+  border: none;
+
+  font-size: 24px;
+  color: white;
+  transition: all 360ms ease-in;
+
+  cursor: pointer;
+
+  @if $type == "submit" {
+    background-color: $paleGreen;
+    &:hover {
+      background-color: $activeGreen;
+    }
+  } @else if $type == "reset" {
+    background-color: $paleRed;
+    &:hover {
+      background-color: $activeRed;
+    }
+  } @else if $type == "logout" {
+    background-color: $blackNotBlack;
+    &:hover {
+      background-color: black;
+    }
+  } @else {
+    @error "Unkown #{type} Type, only accepts [submit, reset, logout]";
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+@mixin spanButton($height, $width, $type) {
+  width: $width;
+  height: $height;
+  font-size: 19px;
+
+  color: white;
+  transition: all 420ms ease-in;
+
+  @if $type == "delete" {
+    background-color: $paleRed;
+    &:hover {
+      background-color: $activeRed;
+    }
+  } @else if $type == "edit" {
+    background-color: $paleBlue;
+    &:hover {
+      background-color: $activeBlue;
+    }
+  }
+}
