@@ -40,7 +40,6 @@ const Home = ({ dispatch, books }) => {
         <ViewBooks
           title={"Public Library"}
           books={publicBooks}
-          userRole={user.role}
           handleDelete={handleDeleteBook}
           handleEdit={() => {
             console.log("edit");

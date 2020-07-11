@@ -10,7 +10,7 @@ const AddContactFrom = ({ contact, handleSubmitContact }) => {
     type: "Personal",
   });
 
-  console.log(contact);
+  //console.log(contact);
 
   useEffect(() => {
     if (contact) {

@@ -16,6 +16,18 @@ const BookSchema = mongoose.Schema({
     type: Number,
     min: 9,
   },
+  language: {
+    type: String,
+  },
+  year: {
+    type: Number,
+    min: 1000,
+    max: 3000,
+  },
+  addedBy: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "users",
+  },
 });
 
 module.exports = {

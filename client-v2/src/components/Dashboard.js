@@ -9,7 +9,6 @@ import Navbar from "./layout/Navbar";
 import AddBookForm from "./containers/partials/AddBookForm";
 import Library from "./containers/Library";
 import MyContact from "./containers/MyContacts";
-import { decode } from "../api/utils";
 
 const Dashboard = ({ dispatch }) => {
   const token = localStorage.getItem("jwt-token");

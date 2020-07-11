@@ -24,7 +24,8 @@ router.get("/:id", async (req, res) => {
 });
 
 router.post("/", async (req, res) => {
-  let { title, description, author, pages } = req.body;
+  let { title, description, author, pages, year, language } = req.body;
+  let userId = res.locals.user.id;
   if (!pages) pages = null;
 
   let newBook = new Book({
@@ -32,6 +33,9 @@ router.post("/", async (req, res) => {
     description,
     author,
     pages,
+    year,
+    language,
+    userId,
   });
 
   let result = await newBook.save();
@@ -39,28 +43,53 @@ router.post("/", async (req, res) => {
   res.json({ msg: "new book created", book: result });
 });
 
-router.delete("/:id", (req, res) => {
+router.delete("/:id", async (req, res, next) => {
   let id = req.params.id;
+  let userId = res.locals.user.id;
 
-  Book.findByIdAndRemove(id, (err, result) => {
-    if (err) next(err);
-    if (result) res.json({ msg: "book deleted" });
-    else res.json({ msg: "no book with that id" });
-  });
+  let book = await Book.findById(id);
+
+  if (book) {
+    if (book.addedBy == userId) {
+      Book.findByIdAndRemove(id, (err, result) => {
+        if (err) next(err);
+        else res.json({ msg: "Book deleted" });
+      });
+    } else res.status(401).json({ msg: "You can't delete this book" });
+  } else res.status(404).json({ msg: "book not found" });
 });
 
-router.put("/:id", (req, res) => {
+router.put("/:id", async (req, res, next) => {
   let id = req.params.id;
-  let { title, description, author, pages } = req.body;
-  Book.findByIdAndUpdate(
-    id,
-    { title, description, author, pages },
-    (err, result) => {
-      if (err) next(err);
-      if (result) res.json({ msg: "Book updated" });
-      else res.json({ msg: "No book found with that id" });
-    }
-  );
+  let userId = res.locals.user.id;
+  let book = await Book.findById(id);
+
+  if (book) {
+    if (book.addedBy == userId) {
+      let { title, description, author, pages, year, language } = req.body;
+
+      Book.findByIdAndUpdate(
+        id,
+        {
+          $set: {
+            title,
+            description,
+            author,
+            pages,
+            year,
+            language,
+            addedBy: userID,
+          },
+        },
+        (err, result) => {
+          if (err) next(err);
+          else {
+            res.json({ msg: "Book updated" });
+          }
+        }
+      );
+    } else res.status(401).json({ msg: "You can't update this book" });
+  } else res.status(404).json({ msg: "Book not found " });
 });
 
 module.exports = router;

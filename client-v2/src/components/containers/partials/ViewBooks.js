@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import SearchBar from "./SearchBar";
 import Book from "./Book";
-const ViewBooks = ({ userRole, title, books, handleDelete, handleEdit }) => {
+const ViewBooks = ({ title, books, handleDelete, handleEdit }) => {
   const [search, setSearch] = useState("");
   const handleChange = (e) => {
     setSearch(e.target.value);
@@ -32,7 +32,6 @@ const ViewBooks = ({ userRole, title, books, handleDelete, handleEdit }) => {
             key={i}
             handleDelete={handleDelete}
             handleEdit={handleEdit}
-            userRole={userRole}
           />
         );
       })}
