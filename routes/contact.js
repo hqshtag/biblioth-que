@@ -67,8 +67,12 @@ router.post(
 router.put("/:id", async (req, res) => {
   const id = req.params.id;
   const { email, name, phone, type } = req.body;
-  await Contact.findByIdAndUpdate(id, { email, name, phone, type });
-  res.send("done");
+  const result = await Contact.findByIdAndUpdate(
+    id,
+    { email, name, phone, type },
+    { new: true }
+  );
+  res.json({ msg: "Contact Updated", contact: result });
 });
 
 //@route   DELETE api/contacts
