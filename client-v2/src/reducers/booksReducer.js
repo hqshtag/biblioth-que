@@ -8,7 +8,7 @@ const initialState = {
 };
 
 export default function booksReducer(state = initialState, action) {
-  //console.log(action);
+  console.log(action);
   let books = [];
   switch (action.type) {
     case bookTypes.GET_REQUEST:
@@ -29,11 +29,8 @@ export default function booksReducer(state = initialState, action) {
         loading: false,
       };
     case bookTypes.POST_SUCCESS:
-      console.log(action);
       books = state.publicBooks;
-      // console.log(action.payload);
       books.push(action.payload.book);
-      console.log(books);
       return {
         ...state,
         publicBooks: books,

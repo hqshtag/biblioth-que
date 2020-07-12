@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 
 import apiActions from "../../actions/bookActions";
@@ -8,8 +8,13 @@ import BookForm from "./forms/BookForm";
 import BookView from "./views/BookView";
 
 const Library = ({ dispatch, token, user, publicBooks }) => {
+  useEffect(() => {
+    dispatch(apiActions.getAllBooks(token));
+  }, []);
+
   const handleAddBook = (book) => {
     dispatch(apiActions.createBook(token, book));
+    dispatch(apiActions.getAllBooks(token));
   };
   const handleUpdateBook = (book) => {
     let id = selectedBook._id;
@@ -50,13 +55,10 @@ const Library = ({ dispatch, token, user, publicBooks }) => {
               book.title.toLowerCase().includes(filter.toLowerCase()) ||
               book.description.toLowerCase().includes(filter.toLowerCase()) ||
               book.author.toLowerCase().includes(filter.toLowerCase()) ||
-              book.language.toLowerCase().includes(filter.toLowerCase()) ||
-              book.year.toString().includes(filter) ||
-              book.pages.toString().includes(filter)
-            ); //||
-            //book.author.toLowerCase().includes(filter.toLowerCase()) ||
-            //book.language.toLowerCase().includes(filter.toLowerCase()) ||
-            //book.year.toString().includes(filter)
+              book.language.toLowerCase().includes(filter.toLowerCase())
+              //book.year.toString().includes(filter) ||
+              //book.pages.toString().includes(filter)
+            );
           })
           .reverse()
       : publicBooks;
