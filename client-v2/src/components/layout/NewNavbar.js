@@ -3,7 +3,7 @@ import TabButton from "./TabButton";
 import LibraryIcon from "../icons/LibraryIcon";
 import ContactsIcon from "../icons/ContactsIcon";
 
-const Navbar = ({ layoutHandler, currentLayout }) => {
+const Navbar = ({ layoutHandler, currentLayout, logout }) => {
   const { library, contacts } = currentLayout;
   return (
     <nav>
@@ -27,7 +27,14 @@ const Navbar = ({ layoutHandler, currentLayout }) => {
         />
       </div>
       <div>
-        <button className="logout-btn">Logout</button>
+        <button
+          className="logout-btn"
+          onClick={() => {
+            logout();
+          }}
+        >
+          Logout
+        </button>
       </div>
     </nav>
   );
