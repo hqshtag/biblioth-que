@@ -12,3 +12,7 @@ export const setAuthHeader = (token) => {
 export const decode = (token) => {
   return jwt_decode(token);
 };
+
+export const isEmptyObject = (o) => {
+  return Object.entries(o).length === 0;
+};

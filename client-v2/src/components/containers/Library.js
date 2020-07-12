@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import apiActions from "../../actions/bookActions";
 
 import ViewBooks from "./partials/ViewBooks";
-import { decode } from "../../api/utils";
+import { decode } from "../../utils";
 
 const Home = ({ dispatch, books }) => {
   const token = localStorage.getItem("jwt-token");

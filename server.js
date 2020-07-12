@@ -14,6 +14,7 @@ const PORT = process.env.PORT || 5000;
 
 //Init middleware
 app.use(express.json({ extended: false }));
+//app.use(express.urlencoded({ extended: true }));
 
 //connectDB
 connectDB();
@@ -35,8 +36,10 @@ app.use("/api/contacts", require("./routes/contact"));
 app.use("/api/users", require("./routes/users"));
 app.use("/api/books", require("./routes/books"));
 
-app.get("/api/test", (req, res) => {
-  res.json({ test: "secret data" });
+app.post("/api/test", async (req, res) => {
+  console.log(req.body);
+
+  res.json({ res: "got your secret data", data: req.body });
 });
 
 //server static

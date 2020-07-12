@@ -29,19 +29,17 @@ export default function booksReducer(state = initialState, action) {
         loading: false,
       };
     case bookTypes.POST_SUCCESS:
+      console.log(action);
       books = state.publicBooks;
       // console.log(action.payload);
       books.push(action.payload.book);
+      console.log(books);
       return {
         ...state,
         publicBooks: books,
         loading: false,
       };
-    case bookTypes.MAKE_FAVOURITE_SUCCESS:
-      return {
-        ...state,
-        loading: false,
-      };
+
     case bookTypes.DELETE_SUCCESS:
       books = state.publicBooks.filter((book) => {
         return book._id !== action.payload.removedBookID;
@@ -52,11 +50,15 @@ export default function booksReducer(state = initialState, action) {
         loading: false,
       };
     case bookTypes.UPDATE_SUCCESS:
-      //let  lib = state.library;
-      //lib.map((book)=>{if(book._id == action.payload.book._id) });
+      let lib = state.publicBooks.map((b) => {
+        if (b._id == action.payload._id) {
+          return action.payload;
+        } else return b;
+      });
       return {
         ...state,
         loading: false,
+        publicBooks: lib,
       };
 
     case bookTypes.DELETE_FAILURE:

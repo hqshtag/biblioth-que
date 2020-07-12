@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 
-import "../../styles/contact_form.scss";
-
 const AddContactFrom = ({ contact, handleSubmitContact }) => {
   const [contactData, setContactData] = useState({
     name: "",

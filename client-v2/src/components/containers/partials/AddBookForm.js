@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "../../styles/book_form.scss";
 
 const AddBookForm = ({ hidden, submitHandler }) => {
   const [bookData, setBookData] = useState({

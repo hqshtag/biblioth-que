@@ -4,23 +4,13 @@ import { connect } from "react-redux";
 import authActions from "../actions/authActions";
 import apiActions from "../actions/bookActions";
 
-import Modal from "./layout/Modal";
 import Navbar from "./layout/NewNavbar";
-import AddBookForm from "./containers/partials/AddBookForm";
-import Library from "./containers/Library";
+import Library from "./containers/NewLibrary";
 import MyContact from "./containers/MyContacts";
+import { decode } from "../utils";
 
 const Dashboard = ({ dispatch }) => {
   const token = localStorage.getItem("jwt-token");
-
-  const [showModal, setShowModal] = useState(false);
-  const toggleModalOn = () => {
-    setShowModal(true);
-  };
-
-  const toggleModalOff = () => {
-    setShowModal(false);
-  };
 
   const [layoutView, setLayoutView] = useState({
     library: true,
@@ -35,32 +25,34 @@ const Dashboard = ({ dispatch }) => {
   const tabNavigationHandler = (e) => {
     // console.log(e);
     let key = e.target.getAttribute("data-key");
-    console.log(key);
+    //console.log(key);
     setLayoutView({ library: false, contacts: false, [key]: true });
     //console.log(layoutView);
   };
 
   const handleAddBook = (data) => {
     dispatch(apiActions.createBook(token, data));
-    toggleModalOff();
   };
 
   const handleLogout = () => {
     dispatch(authActions.logout());
   };
 
+  const userDetails = decode(token);
+
   return (
     <Fragment>
       <Navbar
         logout={handleLogout}
-        toggleModalOn={toggleModalOn}
         layoutHandler={tabNavigationHandler}
         currentLayout={layoutView}
       />
-      <Modal handleClose={toggleModalOff} show={showModal}>
-        <AddBookForm submitHandler={handleAddBook} />
-      </Modal>
-      {layoutView.library ? <Library /> : <MyContact />}
+
+      {layoutView.library ? (
+        <Library token={token} user={userDetails} />
+      ) : (
+        <MyContact />
+      )}
     </Fragment>
   );
 };

@@ -78,13 +78,14 @@ router.put("/:id", async (req, res, next) => {
             pages,
             year,
             language,
-            addedBy: userID,
+            addedBy: userId,
           },
         },
+        { new: true },
         (err, result) => {
           if (err) next(err);
           else {
-            res.json({ msg: "Book updated" });
+            res.json({ msg: "Book updated", book: result });
           }
         }
       );

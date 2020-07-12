@@ -23,8 +23,8 @@ const ViewBooks = ({ title, books, handleDelete, handleEdit }) => {
     <div className="list-container view-books-container">
       <h1>{title}</h1>
 
-      <SearchBar handleChange={handleChange} value={search} />
-
+      {/*       <SearchBar handleChange={handleChange} value={search} />
+       */}
       {filteredBooks.map((b, i) => {
         return (
           <Book

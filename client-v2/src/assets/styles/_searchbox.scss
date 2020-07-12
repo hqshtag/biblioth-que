@@ -1,0 +1,40 @@
+.search-box {
+  justify-self: center;
+  align-self: center;
+
+  margin-top: 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $secondaryBlue;
+
+  width: 720px;
+  height: 90px;
+
+  border-radius: 3px;
+  input {
+    height: 60px;
+    width: 590px;
+    border-radius: 9px 0px 0px 9px;
+    border: none;
+
+    font-size: 21px;
+
+    padding-left: 19px;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .search-btn {
+    @include button(60px, 70px, "logout");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 0px 9px 9px 0px;
+    margin-left: 21px;
+  }
+}

@@ -1,5 +1,5 @@
 import axios from "axios";
-import { setAuthHeader } from "./utils";
+import { setAuthHeader } from "../utils";
 
 export const apiServices = {
   getAllBooks,
@@ -51,7 +51,8 @@ async function updateBook(token, id, data) {
   };
   setAuthHeader(token);
   const res = await axios(requestOptions);
-  return res.data.result;
+
+  return res.data.book;
 }
 
 async function removeBook(token, id) {

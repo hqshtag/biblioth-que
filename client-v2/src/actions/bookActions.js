@@ -89,6 +89,7 @@ function updateBook(token, id, data) {
     return { type: bookTypes.UPDATE_REQUEST };
   };
   let success = (updatedBook) => {
+    //console.log(updatedBook);
     return {
       type: bookTypes.UPDATE_SUCCESS,
       payload: { ...updatedBook },
@@ -102,6 +103,7 @@ function updateBook(token, id, data) {
     dispatch(request({ id }));
     apiServices.updateBook(token, id, data).then(
       (updatedBook) => {
+        //console.log(updatedBook);
         dispatch(success(updatedBook));
       },
       (error) => {

@@ -3,9 +3,9 @@
 }
 
 .submit-btn {
-  @include button(60px, 100px, "submit");
+  @include button(60px, 170px, "submit");
 }
 
 .reset-btn {
-  @include button(60px, 80px, "reset");
+  @include button(60px, 100px, "reset");
 }
