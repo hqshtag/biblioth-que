@@ -35,7 +35,7 @@ router.post("/", async (req, res) => {
     pages,
     year,
     language,
-    userId,
+    addedBy: userId,
   });
 
   let result = await newBook.save();
