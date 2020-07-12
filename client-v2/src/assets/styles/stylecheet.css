@@ -240,6 +240,26 @@ nav .title {
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
   background-color: #fcfbf7;
+  justify-self: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+  width: 750px;
+}
+
+.contacts-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  background-color: #d8e8f3;
+  justify-self: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+  width: 750px;
 }
 
 .wrapper {
@@ -509,7 +529,7 @@ nav .title {
       -ms-flex-pack: center;
           justify-content: center;
   background-color: #4c96c7;
-  width: 720px;
+  width: 750px;
   height: 90px;
   border-radius: 3px;
 }
@@ -588,6 +608,14 @@ nav .title {
   font-weight: 300;
 }
 
+.form-wrapper .texts {
+  text-align: center;
+}
+
+.form-wrapper .texts h4 {
+  font-weight: 100;
+}
+
 .form-wrapper form {
   -ms-flex-item-align: center;
       align-self: center;
@@ -659,6 +687,34 @@ nav .title {
   outline: none;
 }
 
+.form-wrapper form .radio-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.form-wrapper form .radio-div label {
+  font-size: 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.form-wrapper form .radio-div input[type="radio"] {
+  height: 30px;
+  width: 30px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  margin: 0px 17px;
+}
+
 .form-wrapper form .publishYear {
   margin: 9px;
   width: 360px;
@@ -692,11 +748,58 @@ nav .title {
           justify-content: space-evenly;
 }
 
-.book-card {
+.card {
   -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
           box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   -webkit-transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.card:hover {
+  -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+          box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.card .spans {
+  height: 33px;
+}
+
+.card span {
+  justify-self: flex-start;
+  float: right;
+  -webkit-transition: all 120ms cubic-bezier(0.6, 0.04, 0.98, 0.335);
+  transition: all 120ms cubic-bezier(0.6, 0.04, 0.98, 0.335);
+  border-radius: 0px 0px 6px 6px;
+  margin: 0px 3px;
+  padding: 0px 5px;
+  cursor: pointer;
+}
+
+.card span:first-child {
+  margin-right: 9px;
+}
+
+.card span svg {
+  margin: 3px;
+}
+
+.card .edit-span {
+  background-color: #04a6ca;
+}
+
+.card .edit-span:hover {
+  background-color: #046bca;
+}
+
+.card .delete-span {
+  background-color: #e76a62;
+}
+
+.card .delete-span:hover {
+  background-color: #ff4444;
+}
+
+.book-card {
   margin: 19px;
   height: 240px;
   width: 200px;
@@ -712,50 +815,6 @@ nav .title {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-}
-
-.book-card:hover {
-  -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-          box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-}
-
-.book-card .spans {
-  height: 33px;
-}
-
-.book-card span {
-  justify-self: flex-start;
-  float: right;
-  -webkit-transition: all 120ms cubic-bezier(0.6, 0.04, 0.98, 0.335);
-  transition: all 120ms cubic-bezier(0.6, 0.04, 0.98, 0.335);
-  border-radius: 0px 0px 6px 6px;
-  margin: 0px 3px;
-  padding: 0px 5px;
-  cursor: pointer;
-}
-
-.book-card span:first-child {
-  margin-right: 9px;
-}
-
-.book-card span svg {
-  margin: 3px;
-}
-
-.book-card .edit-span {
-  background-color: #04a6ca;
-}
-
-.book-card .edit-span:hover {
-  background-color: #046bca;
-}
-
-.book-card .delete-span {
-  background-color: #e76a62;
-}
-
-.book-card .delete-span:hover {
-  background-color: #ff4444;
 }
 
 .book-card .card-header {
@@ -800,15 +859,44 @@ nav .title {
 .book-card .pages {
   background-color: #62e7a7;
   border-radius: 6px 6px 0px 0px;
-  width: 36px;
-  height: 18px;
+  width: 30px;
+  height: 14px;
   color: white;
   font-weight: 500;
   text-align: center;
 }
 
 .book-card .pages p {
-  font-size: 14px;
+  font-size: 12px;
+}
+
+.contact-card {
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  -webkit-transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  width: 600px;
+  height: 180px;
+  background-color: white;
+  border-radius: 9px;
+  margin: 8px;
+}
+
+.contact-card:hover {
+  -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+          box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.contact-card .contact-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.contact-card .contact-wrapper .avatar-div {
+  width: 120px;
+  height: 120px;
+  margin: 0px 42px;
 }
 
 * {

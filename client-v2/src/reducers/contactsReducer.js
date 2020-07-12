@@ -37,10 +37,17 @@ export default function contactsReducer(state = initialState, action) {
       };
 
     case contactTypes.UPDATE_SUCCESS:
-      window.location.reload(false);
+      //window.location.reload(false);
+      con = state.contacts.map((c) => {
+        if (c._id == action.payload._id) {
+          return action.payload;
+        } else return c;
+      });
+      //console.log(action.payload);
       return {
         ...state,
         loading: false,
+        contacts: con,
       };
 
     case contactTypes.DELETE_SUCCESS:

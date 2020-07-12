@@ -25,4 +25,18 @@
   flex-wrap: wrap;
   justify-content: space-evenly;
   background-color: $whiteNotWhite;
+  justify-self: center;
+  align-self: center;
+
+  width: 750px;
+}
+
+.contacts-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  background-color: $unoticedBlue;
+  justify-self: center;
+  align-self: center;
+  width: 750px;
 }

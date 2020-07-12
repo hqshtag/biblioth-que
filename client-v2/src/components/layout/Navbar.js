@@ -1,35 +1,38 @@
 import React from "react";
+import TabButton from "./TabButton";
+import LibraryIcon from "../icons/LibraryIcon";
+import ContactsIcon from "../icons/ContactsIcon";
 
-import "../styles/navbar.scss";
-
-const Navbar = ({ logout, toggleModalOn, layoutHandler }) => {
+const Navbar = ({ layoutHandler, currentLayout, logout }) => {
+  const { library, contacts } = currentLayout;
   return (
     <nav>
-      <div>
-        <h1 className="title">Bibliothèque_Gomycode</h1>
+      <div className="title-container">
+        <h2 className="title">Bibliotheque GoMyCode</h2>
       </div>
-      <div className="nav">
-        <button className="navbutton" data-key="home" onClick={layoutHandler}>
-          Library
-        </button>
-
+      <div className="tabs-container">
+        <TabButton
+          title="Library"
+          dataKey="library"
+          Icon={LibraryIcon}
+          active={library}
+          switchTab={layoutHandler}
+        />
+        <TabButton
+          title="Contacts"
+          dataKey="contacts"
+          Icon={ContactsIcon}
+          active={contacts}
+          switchTab={layoutHandler}
+        />
+      </div>
+      <div>
         <button
-          className="navbutton"
-          data-key="contacts"
-          onClick={layoutHandler}
+          className="logout-btn"
+          onClick={() => {
+            logout();
+          }}
         >
-          My Contacts
-        </button>
-      </div>
-      <div>
-        {" "}
-        <button className="navbutton" onClick={() => toggleModalOn()}>
-          Add a book
-        </button>
-      </div>
-      <div>
-        {" "}
-        <button className="logoutButton" onClick={() => logout()}>
           Logout
         </button>
       </div>

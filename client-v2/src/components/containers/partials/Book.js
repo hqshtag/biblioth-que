@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import EditIcon from "../../icons/EditIcon";
 import TrashIcon from "../../icons/TrashIcon";
-import { selectFields } from "express-validator/src/select-fields";
 import DeleteIcon from "../../icons/DeleteIcon";
 
 const Book = ({ book, deletor, manage, selector }) => {
@@ -19,7 +18,7 @@ const Book = ({ book, deletor, manage, selector }) => {
   };
 
   return (
-    <div className="book-card">
+    <div className="card book-card">
       <div className="spans">
         {manage ? (
           <>

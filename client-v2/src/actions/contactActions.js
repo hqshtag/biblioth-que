@@ -57,10 +57,10 @@ function updateContact(token, id, data) {
   let request = (id) => {
     return { type: contactTypes.UPDATE_REQUEST, payload: { userID: id } };
   };
-  let success = (id) => {
+  let success = (contact) => {
     return {
       type: contactTypes.UPDATE_SUCCESS,
-      payload: { userID: id },
+      payload: { ...contact },
     };
   };
   let failure = (error) => {
@@ -71,7 +71,7 @@ function updateContact(token, id, data) {
     dispatch(request({ id }));
     apiServices.updateContact(token, id, data).then(
       (updatedcontact) => {
-        dispatch(success(id));
+        dispatch(success(updatedcontact));
       },
       (error) => {
         dispatch(failure(error));

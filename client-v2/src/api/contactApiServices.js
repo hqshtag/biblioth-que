@@ -41,7 +41,7 @@ async function updateContact(token, id, data) {
   };
   setAuthHeader(token);
   const res = await axios(requestOptions);
-  return res.data;
+  return res.data.contact;
 }
 
 async function removeContact(token, id) {

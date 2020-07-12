@@ -2,11 +2,10 @@ import React, { Fragment, useState, useEffect } from "react";
 import { connect } from "react-redux";
 
 import authActions from "../actions/authActions";
-import apiActions from "../actions/bookActions";
 
-import Navbar from "./layout/NewNavbar";
-import Library from "./containers/NewLibrary";
-import MyContact from "./containers/MyContacts";
+import Navbar from "./layout/Navbar";
+import Library from "./containers/Library";
+import Contacts from "./containers/Contacts";
 import { decode } from "../utils";
 
 const Dashboard = ({ dispatch }) => {
@@ -17,21 +16,9 @@ const Dashboard = ({ dispatch }) => {
     contacts: false,
   });
 
-  useEffect(() => {
-    dispatch(apiActions.getAllBooks(token));
-    //dispatch()
-  }, []);
-
   const tabNavigationHandler = (e) => {
-    // console.log(e);
     let key = e.target.getAttribute("data-key");
-    //console.log(key);
     setLayoutView({ library: false, contacts: false, [key]: true });
-    //console.log(layoutView);
-  };
-
-  const handleAddBook = (data) => {
-    dispatch(apiActions.createBook(token, data));
   };
 
   const handleLogout = () => {
@@ -51,7 +38,7 @@ const Dashboard = ({ dispatch }) => {
       {layoutView.library ? (
         <Library token={token} user={userDetails} />
       ) : (
-        <MyContact />
+        <Contacts token={token} />
       )}
     </Fragment>
   );

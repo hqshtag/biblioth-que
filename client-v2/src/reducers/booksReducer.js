@@ -8,7 +8,7 @@ const initialState = {
 };
 
 export default function booksReducer(state = initialState, action) {
-  console.log(action);
+  //console.log(action);
   let books = [];
   switch (action.type) {
     case bookTypes.GET_REQUEST:

@@ -1,61 +1,106 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
+
 import apiActions from "../../actions/bookActions";
 
-import ViewBooks from "./partials/ViewBooks";
-import { decode } from "../../utils";
+import SearchBar from "./partials/SearchBar";
+import BookForm from "./forms/BookForm";
+import BookView from "./views/BookView";
 
-const Home = ({ dispatch, books }) => {
-  const token = localStorage.getItem("jwt-token");
-  const [selectedBook, setSelectedBook] = useState({});
-
-  const user = decode(token);
+const Library = ({ dispatch, token, user, publicBooks }) => {
+  useEffect(() => {
+    dispatch(apiActions.getAllBooks(token));
+  }, []);
 
   const handleAddBook = (book) => {
     dispatch(apiActions.createBook(token, book));
+    dispatch(apiActions.getAllBooks(token));
+  };
+  const handleUpdateBook = (book) => {
+    let id = selectedBook._id;
+    dispatch(apiActions.updateBook(token, id, book));
   };
 
   const handleDeleteBook = (id) => {
     dispatch(apiActions.removeBook(token, id));
   };
 
-  const handleEditBook = (id, data) => {
-    dispatch(apiActions.updateBook(token, id, data));
+  const [selectedBook, setSelectedBook] = useState({});
+  const [edit, setEdit] = useState(false);
+
+  const selectbook = (id) => {
+    setEdit(true);
+    setSelectedBook(publicBooks.find((b) => b._id === id));
   };
 
-  const selectBook = (id) => {
-    //setEdit(true);
-    let s = books.find((c) => c._id === id);
-
-    setSelectedBook(s);
+  const unselectbook = () => {
+    setEdit(false);
+    setSelectedBook({});
   };
 
-  const { publicBooks } = books;
+  //console.log(user);
+  const { name, id } = user;
+
+  const [filter, setFilter] = useState("");
+
+  const capitalize = (str) => str.replace(/^./, str[0].toUpperCase());
+
   //console.log(publicBooks);
+
+  const filteredBooks =
+    publicBooks.length !== 0
+      ? publicBooks
+          .filter((book) => {
+            return (
+              book.title.toLowerCase().includes(filter.toLowerCase()) ||
+              book.description.toLowerCase().includes(filter.toLowerCase()) ||
+              book.author.toLowerCase().includes(filter.toLowerCase()) ||
+              book.language.toLowerCase().includes(filter.toLowerCase())
+              //book.year.toString().includes(filter) ||
+              //book.pages.toString().includes(filter)
+            );
+          })
+          .reverse()
+      : publicBooks;
+
   return (
-    <div className="tab-container home">
+    <div className="grid-container tab-library">
       {" "}
-      <div className="left-half">
-        {" "}
-        <ViewBooks
-          title={"Public Library"}
-          books={publicBooks}
-          handleDelete={handleDeleteBook}
-          handleEdit={() => {
-            console.log("edit");
-          }}
+      <div className="display-area">
+        <div className="welcome-text">
+          <h1>Welcome Back {capitalize(name)}!!</h1>
+          <h3>View the latest books added to the library:</h3>
+        </div>
+        <SearchBar value={filter} setValue={setFilter} />
+        <BookView
+          books={filteredBooks}
+          userID={id}
+          selector={selectbook}
+          deletor={handleDeleteBook}
         />
+      </div>
+      <div className="form-area">
+        {" "}
+        {edit ? (
+          <BookForm
+            unselect={unselectbook}
+            submit={handleUpdateBook}
+            book={selectedBook}
+          />
+        ) : (
+          <BookForm unselect={unselectbook} submit={handleAddBook} book={{}} />
+        )}
       </div>
     </div>
   );
 };
 
 const mapStateToProps = (state) => {
-  const { books } = state;
+  const { publicBooks } = state.books;
 
   return {
-    books,
+    publicBooks,
   };
 };
 
-export default connect(mapStateToProps)(Home);
+export default connect(mapStateToProps)(Library);

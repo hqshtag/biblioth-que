@@ -29,7 +29,8 @@ const BookForm = ({ submit, book, unselect }) => {
   };
   //console.log(submit);
 
-  const clearForm = () => {
+  const clearForm = (e) => {
+    e.preventDefault();
     if (book) {
       unselect();
     }
@@ -111,21 +112,20 @@ const BookForm = ({ submit, book, unselect }) => {
           name="pages"
           placeholder="Pages"
           min="9"
-          max="3000"
+          max="999"
           value={data.pages}
           onChange={handleChange}
         />
         <div className="buttons">
-          <button className="reset-btn" onClick={clearForm}>
+          <button className="reset-btn" onClick={(e) => clearForm(e)}>
             Reset
           </button>
           <button
             className="submit-btn"
             onClick={(e) => {
               e.preventDefault();
-              console.log(data);
               submit(data);
-              clearForm();
+              clearForm(e);
             }}
           >
             {isEmptyObject(book) ? "Add Book" : "Update"}

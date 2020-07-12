@@ -13,6 +13,12 @@
     text-align: center;
     font-weight: 300;
   }
+  .texts {
+    text-align: center;
+    h4 {
+      font-weight: 100;
+    }
+  }
   form {
     align-self: center;
     justify-self: center;
@@ -35,6 +41,21 @@
     }
     select {
       @include inputText(60px, 360px);
+    }
+    .radio-div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      label {
+        font-size: 24px;
+        display: flex;
+      }
+      input[type="radio"] {
+        height: 30px;
+        width: 30px;
+        align-self: center;
+        margin: 0px 17px;
+      }
     }
 
     .publishYear {

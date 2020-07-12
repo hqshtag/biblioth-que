@@ -1,15 +1,23 @@
 import React from "react";
+import SearchIcon from "../../icons/SearchIcon";
 
-const SearchBar = ({ value, handleChange }) => {
+const SearchBar = ({ value, setValue }) => {
+  const handleChange = (e) => {
+    setValue(e.target.value);
+  };
+
   return (
-    <div className="search-bar">
+    <div className="search-box">
       <input
         type="text"
-        name="search"
+        name="searchbar"
+        placeholder="Search"
         value={value}
         onChange={handleChange}
-        placeholder="Filter"
       />
+      <div className="search-btn">
+        <SearchIcon />
+      </div>
     </div>
   );
 };
